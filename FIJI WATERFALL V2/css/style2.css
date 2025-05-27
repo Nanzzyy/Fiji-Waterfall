@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    background-image: url("/img/WaterfallBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(126, 126, 126, 0.2); /* Ubah 0.5 sesuai tingkat kepudaran */
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container-nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 0 0 0.5vh 0.5vh;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    padding-right: 30px;
+    gap: 50px;
+    animation: fadeIn 3s forwards;
+}
+
+.container-nav a {
+    font-size: 1.2rem;
+    color: #222831;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    
+}
+.container-nav a:hover {
+    transform: scale(1.1);
+    color: #00ff08;
+    cursor: pointer;
+}
+
+.container-title{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 500px;
+    margin-left: 100px;
+}
+.container-title h1{
+    font-size: 3rem;
+    color: #ECFAE5;
+    font-weight: bold;
+    animation: fadeIn 3s forwards;
+}
+.container-title h3{
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #ECFAE5;
+    font-weight: lighter;
+}
+.line{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: rgba(255,255,255,0.2);
+    margin-top: 100px;
+    animation: fadeIn 3s forwards;
+
+}
+.line2{
+    width: 100%;
+    height: 5px;
+    background-color: #B0DB9C;
+    margin-top: 10px;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+.wrapper h2{
+    margin-top: 18vw;
+    font-size: 1.85rem;
+    color: #ffffff;
+    font-weight: bolder;
+    animation: fadeIn 3s forwards;
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
+.wrapper .toph2{
+    margin-top: 2vw;
+    font-size: 1.85rem;
+    color: #ffffff;
+    font-weight: bolder;
+    animation: fadeIn 3s forwards;
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
+.white-text {
+    color: #ffffff;
+    font-size: 1.8rem;
+    padding-bottom: 2px;
+}
+.home-desc {
+    border-radius: 10px;
+    background-color: rgba(221, 246, 210, 0.7);    
+    margin-top: 8vw;
+    padding: 10px;
+    width: 1500px;
+    box-sizing: border-box;
+    overflow: visible;
+    animation: fadeIn 3s forwards;
+}
+
+.home-desc p {
+    max-width: 90%;
+    width: 100%;
+    margin: 40px auto;
+    font-size: 1.8rem;
+    font-weight: lighter;
+    text-align: left;
+    color: #000000;
+}
+
+.home-desc h3 {
+    margin: 2em auto 1em auto;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+.home-desc img {
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    margin-left: 65px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    opacity: 100%;
+    box-shadow: #000000 0px 0px 20px;
+}
+.home-desc img:hover {
+    transform: scale(1.05);
+    transition: transform 0.8s;
+}
+.home-desc .img-about {
+    display: block;
+    width: 1000px;
+    height: 500px;
+    margin-left: 240px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    opacity: 100%;
+    box-shadow: #000000 0px 0px 20px;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 1080px) {
+    .home-desc {
+        width: 95vw;
+        padding: 4vw 6vw;
+        min-height: 30vh;
+        }
+    .home-desc img {
+        width: 230px;
+        height: 230px;
+        margin-left: 60px;
+    }
+    .home-desc p {
+        max-width: 95vw;
+        font-size: 1.7rem;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        margin: 10px;
+    }
+    .home-desc h3 {
+        font-size: 1.3rem;
+        margin: 1em auto;
+    }
+    .home-desc .img-about{
+        width: 850px;
+        height: 300px;
+        margin: 30px;
+    }
+    input[type="button"]{
+        width: 90%;
+        margin-left: 5%; 
+        font-size: 1.5rem;
+    }
+
+}
+.typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ECFAE5;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 61ch; } /* Ganti 18 sesuai jumlah karakter */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ECFAE5; }
+}
+input[type="button"]{
+    background-color: #4CAF50;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    margin-left: 70px;
+    font-size: x-large;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+input[type="button"]:hover{
+    background-color: #45a049;
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
